@@ -10,7 +10,7 @@ branding:
 # Define your inputs here.
 inputs:
   milliseconds:
-    description: 'Your input description here'
+    description: '测试'
     required: true
     default: '1000'
 
