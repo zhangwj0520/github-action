@@ -1,4 +1,4 @@
-# Create a GitHub Action Using TypeScript
+# 使用 TypeScript 创建 GitHub 操作
 
 [![GitHub Super-Linter](https://github.com/actions/typescript-action/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
 ![CI](https://github.com/actions/typescript-action/actions/workflows/ci.yml/badge.svg)
@@ -6,15 +6,15 @@
 [![CodeQL](https://github.com/actions/typescript-action/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/actions/typescript-action/actions/workflows/codeql-analysis.yml)
 [![Coverage](./badges/coverage.svg)](./badges/coverage.svg)
 
-Use this template to bootstrap the creation of a TypeScript action. :rocket:
+使用此模板引导 TypeScript 操作的创建。  :rocket:
 
-This template includes compilation support, tests, a validation workflow,
+该模板包括编译支持、测试、验证工作流程、 发布和版本控制指南。
 publishing, and versioning guidance.
 
-If you are new, there's also a simpler introduction in the
-[Hello world JavaScript action repository](https://github.com/actions/hello-world-javascript-action).
+如果您是新手，这里还有更简单的介绍
+[Hello world JavaScript 操作存储库](https://github.com/actions/hello-world-javascript-action).
 
-## Create Your Own Action
+## 创建你自己的动作
 
 To create your own action, you can use this repository as a template! Just
 follow the below instructions:
