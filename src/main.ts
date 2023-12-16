@@ -1,4 +1,4 @@
-import * as core from '@actions/core'
+import core from '@actions/core'
 import { wait } from './wait'
 
 /**
@@ -23,5 +23,4 @@ export async function run(): Promise<void> {
     // Fail the workflow run if an error occurs
     if (error instanceof Error) core.setFailed(error.message)
   }
-
 }
