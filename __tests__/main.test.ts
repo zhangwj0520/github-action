@@ -1,9 +1,9 @@
 /**
- * Unit tests for the action's main functionality, src/main.ts
+ *操作主要功能的单元测试，src/main.ts
  *
- * These should be run as if the action was called from a workflow.
- * Specifically, the inputs listed in `action.yml` should be set as environment
- * variables following the pattern `INPUT_<INPUT_NAME>`.
+ *这些应该像从工作流调用操作一样运行。
+ *具体来说，`action.yml`中列出的输入应设置为环境
+ *遵循模式“INPUT_<INPUT_NAME>”的变量。
  */
 
 import * as core from '@actions/core'

@@ -10,6 +10,9 @@ dependencies:
     version: 1.10.1
 
 devDependencies:
+  '@jest/globals':
+    specifier: ^29.7.0
+    version: 29.7.0
   '@types/jest':
     specifier: ^29.5.11
     version: 29.5.11
