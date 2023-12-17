@@ -16,27 +16,26 @@ publishing, and versioning guidance.
 
 ## 创建你自己的动作
 
-To create your own action, you can use this repository as a template! Just
-follow the below instructions:
+要创建您自己的操作，您可以使用此存储库作为模板！只是
+请按照以下说明操作:
 
-1. Click the **Use this template** button at the top of the repository
-1. Select **Create a new repository**
-1. Select an owner and name for your new repository
-1. Click **Create repository**
-1. Clone your new repository
+1. 单击存储库顶部的 **使用此模板**按钮
+2. 选择**创建新存储库**
+3. 为新存储库选择所有者和名称
+4. 点击**创建存储库**
+5. 克隆新的存储库
 
-> [!IMPORTANT]
+> [!重要]
 >
-> Make sure to remove or update the [`CODEOWNERS`](./CODEOWNERS) file! For
-> details on how to use this file, see
-> [About code owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
+> 确保删除或更新 [`CODEOWNERS`](./CODEOWNERS) 文件！为了
+> 有关如何使用此文件的详细信息，请参见
+> [关于代码所有者](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)。
 
-## Initial Setup
+## 初始设置
 
-After you've cloned the repository to your local machine or codespace, you'll
-need to perform some initial setup steps before you can develop your action.
+将存储库克隆到本地计算机或代码空间后，您将在制定操作之前需要执行一些初始设置步骤。
 
-> [!NOTE]
+> [!提示]
 >
 > You'll need to have a reasonably modern version of
 > [Node.js](https://nodejs.org) handy (20.x or later should work!). If you are
@@ -46,6 +45,14 @@ need to perform some initial setup steps before you can develop your action.
 > to the correct version when you `cd` into the repository. Additionally, this
 > `.node-version` file is used by GitHub Actions in any `actions/setup-node`
 > actions.
+>
+> 你需要有一个较新版本的[Node.js](https://nodejs.org) 方便（20.x 或更高版本应该可以工作！）。如果你是
+> 使用 [`nodenv`](https://github.com/nodenv/nodenv) 等版本管理器或
+> [`nvm`](https://github.com/nvm-sh/nvm)，此模板有一个 `.node-version`
+> 存储库根目录下的文件，将用于自动切换
+> 当您“cd”到存储库时到正确的版本。另外，这
+> `.node-version` 文件由任何 `actions/setup-node` 中的 GitHub Actions 使用
+> 行动。
 
 1. :hammer_and_wrench: Install the dependencies
 
@@ -53,13 +60,13 @@ need to perform some initial setup steps before you can develop your action.
    npm install
    ```
 
-1. :building_construction: Package the TypeScript for distribution
+2. :building_construction: Package the TypeScript for distribution
 
    ```bash
    npm run bundle
    ```
 
-1. :white_check_mark: Run the tests
+3. :white_check_mark: Run the tests
 
    ```bash
    $ npm test
