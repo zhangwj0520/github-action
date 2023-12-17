@@ -5,7 +5,7 @@
 #
 # 如果此工作流程从功能分支运行，它将充当附加 CI
 # 如果签入的 `dist/` 目录与当前目录不匹配，则检查并失败
-name: 检查代码是否编译
+name: 检查代码是否编译(重新构建对比)
 
 on:
   push:
@@ -31,11 +31,33 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-          cache: npm
+          # cache: npm
 
-      - name: Install Dependencies
-        id: install
-        run: npm i
+      # - name: Install Dependencies
+      #   id: install
+      #   run: npm i
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+            version: 8
+            run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Build dist/ Directory
         id: build
