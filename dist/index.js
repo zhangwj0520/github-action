@@ -24707,12 +24707,32 @@ exports["default"] = _default;
 
 "use strict";
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.run = void 0;
-const core_1 = __importDefault(__nccwpck_require__(9093));
+const core = __importStar(__nccwpck_require__(9093));
 const wait_1 = __nccwpck_require__(5722);
 /**
  * The main function for the action.
@@ -24720,20 +24740,20 @@ const wait_1 = __nccwpck_require__(5722);
  */
 async function run() {
     try {
-        const ms = core_1.default.getInput('milliseconds');
+        const ms = core.getInput('milliseconds');
         // Debug logs are only output if the `ACTIONS_STEP_DEBUG` secret is true
-        core_1.default.debug(`Waiting ${ms} milliseconds ...`);
+        core.debug(`Waiting ${ms} milliseconds ...`);
         // Log the current timestamp, wait, then log the new timestamp
-        core_1.default.debug(new Date().toTimeString());
+        core.debug(new Date().toTimeString());
         await (0, wait_1.wait)(parseInt(ms, 10));
-        core_1.default.debug(new Date().toTimeString());
+        core.debug(new Date().toTimeString());
         // Set outputs for other workflow steps to use
-        core_1.default.setOutput('time', new Date().toTimeString());
+        core.setOutput('time', new Date().toTimeString());
     }
     catch (error) {
         // Fail the workflow run if an error occurs
         if (error instanceof Error)
-            core_1.default?.setFailed(error.message);
+            core?.setFailed(error.message);
     }
 }
 exports.run = run;
