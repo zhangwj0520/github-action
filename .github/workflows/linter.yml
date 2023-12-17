@@ -21,17 +21,33 @@ jobs:
         id: checkout
         uses: actions/checkout@v4
 
+      # - name: Setup Node.js
+      #   id: setup-node
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version-file: .node-version
+      #     cache: npm
+
+      # - name: Install Dependencies
+      #   id: install
+      #   # run: npm ci
+      #   run: npm install
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Setup Node.js
         id: setup-node
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-          cache: npm
+          cache: 'pnpm'
 
       - name: Install Dependencies
-        id: install
-        # run: npm ci
-        run: npm install
+        id: pnpm-install
+        run: pnpm install
 
       - name: Lint Codebase
         id: super-linter
